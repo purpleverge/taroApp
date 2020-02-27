@@ -35,7 +35,7 @@ export default class Clock extends Component {
 
   render(){
     const {time} = this.state
-    console.log(this.props.onTimeChange)
+    // console.log(this.props.onTimeChange)
     return (
       <View>
         <View>

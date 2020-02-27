@@ -1,5 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
+import { AtButton, AtList, AtListItem } from "taro-ui";
 
 export default class List extends Component {
   constructor(props){
@@ -56,30 +57,37 @@ export default class List extends Component {
     const {users} = this.state
     return (
       <View>
-        {
-          users.map((item, index) => {
-            // 1. 普通写法
-            // if ((index + 1) % 2 === 0) {
-            //   return (
-            //     <View key={ index }
-            //           style={ {backgroundColor: `rgba(0,0,0,0.${ index })`} }>{ e }</View>
-            //   )
-            // } else {
-            //   return ''
-            // }
-            // 2. 简化写法
-            // return (index + 1) % 2 === 0
-            //   ? <View key={ index } style={ {backgroundColor: `rgba(0,0,0,0.${ index })`} }>{ e }</View>
-            //   : ''
-            // 3. 再简化
-            return  <View key={ index }
-                       style={ {backgroundColor: `rgba(0, 0, 0, 0)`} }
-                       onClick={ this.handleItemClick.bind(this, item)}
-              >{ item.id }--{ item.name }--{ item.age }</View>
-          })
-        }
-        <Button onClick={ this.handleAddUser.bind(this) }> 添加 </Button>
-        <Button onClick={ this.handleDelUser.bind(this) }> 删除 </Button>
+        <AtList>
+          {
+            users.map((item, index) => {
+              // 1. 普通写法
+              // if ((index + 1) % 2 === 0) {
+              //   return (
+              //     <View key={ index }
+              //           style={ {backgroundColor: `rgba(0,0,0,0.${ index })`} }>{ e }</View>
+              //   )
+              // } else {
+              //   return ''
+              // }
+              // 2. 简化写法
+              // return (index + 1) % 2 === 0
+              //   ? <View key={ index } style={ {backgroundColor: `rgba(0,0,0,0.${ index })`} }>{ e }</View>
+              //   : ''
+              // 3. 再简化
+              // return <View key={ index }
+              //              style={ {backgroundColor: `rgba(0, 0, 0, 0)`} }
+              //              onClick={ this.handleItemClick.bind(this, item) }>
+              //   { item.id }--{ item.name }--{ item.age }
+              // </View>
+
+              return <AtListItem  title={`${ item.id }--${ item.name }--${ item.age }`}
+                                  arrow={"right"}
+                                  onClick={ this.handleItemClick.bind(this, item) } />
+            })
+          }
+        </AtList>
+        <AtButton onClick={ this.handleAddUser.bind(this) } type={ "primary" }> 添加 </AtButton>
+        <AtButton onClick={ this.handleDelUser.bind(this) } type={ "secondary" }> 删除 </AtButton>
       </View>
     )
   }

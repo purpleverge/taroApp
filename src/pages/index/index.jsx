@@ -3,6 +3,7 @@ import { View, Text, Button } from '@tarojs/components'
 import Header from '../header/header'
 import Clock from "../clock/clock";
 import List from "../list/list";
+import { AtButton } from 'taro-ui'
 
 import './index.less'
 
@@ -63,7 +64,7 @@ export default class Index extends Component {
           <Text>我是index传入的</Text>
         </Clock>
         <List  onItemClick={this.handleItemClick.bind(this)}></List>
-        <Button onClick={ this.handleToDetail }>跳转详情</Button>
+        <AtButton onClick={ this.handleToDetail }>跳转详情</AtButton>
       </View>
     )
   }
