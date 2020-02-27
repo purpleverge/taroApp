@@ -37,7 +37,8 @@ export default class Index extends Component {
 
   handleToDetail(){
     Taro.navigateTo({
-      url: 'pages/detail/detail'
+      // 注意这里url一定要有"/"
+      url: '/pages/detail/detail'
     })
   }
 
