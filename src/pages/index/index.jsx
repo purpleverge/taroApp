@@ -42,6 +42,13 @@ export default class Index extends Component {
     })
   }
 
+  handleItemClick(res){
+    console.log('组件外监听 onItemClick:', res);
+    Taro.navigateTo({
+        url:'/pages/detail/detail?id=' + res.id
+      })
+  }
+
   render(){
     return (
       <View>
@@ -55,7 +62,7 @@ export default class Index extends Component {
           } }>
           <Text>我是index传入的</Text>
         </Clock>
-        <List></List>
+        <List  onItemClick={this.handleItemClick.bind(this)}></List>
         <Button onClick={ this.handleToDetail }>跳转详情</Button>
       </View>
     )

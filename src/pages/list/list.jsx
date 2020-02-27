@@ -45,6 +45,11 @@ export default class List extends Component {
     })
   }
 
+  handleItemClick(item){
+    // console.log('组件内 handleItemClick:', item);
+    this.props.onItemClick(item)
+  }
+
   render(){
     // 列表渲染
     const tempArray = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -52,7 +57,7 @@ export default class List extends Component {
     return (
       <View>
         {
-          users.map((e, index) => {
+          users.map((item, index) => {
             // 1. 普通写法
             // if ((index + 1) % 2 === 0) {
             //   return (
@@ -67,9 +72,10 @@ export default class List extends Component {
             //   ? <View key={ index } style={ {backgroundColor: `rgba(0,0,0,0.${ index })`} }>{ e }</View>
             //   : ''
             // 3. 再简化
-            return ((index) % 2 === 0 || (index) % 2 === 1)
-              && <View key={ index }
-                       style={ {backgroundColor: `rgba(0, 0, 0, 0)`} }>{ e.id }--{ e.name }--{ e.age }</View>
+            return  <View key={ index }
+                       style={ {backgroundColor: `rgba(0, 0, 0, 0)`} }
+                       onClick={ this.handleItemClick.bind(this, item)}
+              >{ item.id }--{ item.name }--{ item.age }</View>
           })
         }
         <Button onClick={ this.handleAddUser.bind(this) }> 添加 </Button>
