@@ -20,12 +20,12 @@ export default class Clock extends Component {
   // 组件挂载完成之后
   componentDidMount(){
     console.log('组件挂载完成之后');
-    setInterval(() => {
-      const time = new Date()
-      this.setState({time})
-      // 通知父组件
-      // this.props.onTimeChange(time)
-    }, 1000)
+    // setInterval(() => {
+    //   const time = new Date()
+    //   this.setState({time})
+    //   // 通知父组件
+    //   this.props.onTimeChange(time)
+    // }, 1000)
   }
 
   componentWillUnmount(){
