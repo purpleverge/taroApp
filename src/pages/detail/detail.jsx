@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text, Button } from '@tarojs/components'
+import { View, Text } from '@tarojs/components'
 import { AtButton } from "taro-ui";
 
 export default class Detail extends Component {
@@ -38,7 +38,7 @@ export default class Detail extends Component {
     return (
       <View>
         <Text>Detail...{id}</Text>
-        <AtButton onClick={ this.handleToBack }>返回</AtButton>
+        <AtButton onClick={this.handleToBack}>返回</AtButton>
 
       </View>
     )

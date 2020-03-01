@@ -1,6 +1,5 @@
-import { Component } from '@tarojs/taro'
+import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-import { initDevTools } from "nervjs/dist/packages/nerv-devtools/src";
 
 export default class Clock extends Component {
   // 构造函数
@@ -39,13 +38,13 @@ export default class Clock extends Component {
     return (
       <View>
         <View>
-          <Text>{ this.props.children }</Text>
+          <Text>{this.props.children}</Text>
         </View>
         <Text>现在时间：</Text>
         <View>
-          {/*不能把对象直接放在页面模板上*/ }
-          {/* <Text>{time.toLocaleString()}</Text>*/ }
-          <Text>{ time.toLocaleString() }</Text>
+          {/*不能把对象直接放在页面模板上*/}
+          {/* <Text>{time.toLocaleString()}</Text>*/}
+          <Text>{time.toLocaleString()}</Text>
         </View>
       </View>
     )

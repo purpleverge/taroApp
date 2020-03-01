@@ -1,6 +1,6 @@
-import { Component } from '@tarojs/taro'
-import { View, Text, Button, Radio, Checkbox, Swiper, SwiperItem, Input } from '@tarojs/components'
-import { AtButton, AtRadio, AtCheckbox, AtInput, AtTextarea } from 'taro-ui'
+import Taro, { Component } from '@tarojs/taro'
+import { View, Text, Swiper, SwiperItem } from '@tarojs/components'
+import { AtButton, AtRadio, AtCheckbox, AtInput } from 'taro-ui'
 
 export default class Header extends Component {
   constructor(props){
@@ -85,17 +85,21 @@ export default class Header extends Component {
           <SwiperItem>22222</SwiperItem>
         </Swiper>
 
-        {/*使用变量*/ }
-        <Text>{ title }</Text>
+        {/*使用变量*/}
+        <Text>{title}</Text>
 
         <AtButton>按钮</AtButton>
 
-        <AtRadio options={ options } value={ 'option2' }></AtRadio>
+        <AtRadio options={options} value={'option2'}></AtRadio>
 
-        <AtCheckbox options={checkOptions} selectedList={ ['list1', 'list3'] } onClick={ this.handleClick.bind(this, title, 'ddd') }></AtCheckbox>
-        <Text> 当前状态：{ checked.toString() }</Text>
-        <AtInput value={ value } onChange={ this.handleChange }></AtInput>
-        <Text>子组件input的内容：{ value }</Text>
+        <AtCheckbox
+          options={checkOptions}
+          selectedList={['list1', 'list3']}
+          onClick={this.handleClick.bind(this, title, 'ddd')}
+        />
+        <Text> 当前状态：{checked.toString()}</Text>
+        <AtInput value={value} onChange={this.handleChange}></AtInput>
+        <Text>子组件input的内容：{value}</Text>
       </View>
     )
   }
