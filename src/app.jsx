@@ -12,18 +12,7 @@ import './app.less'
 // }
 
 class App extends Component {
-
-  config = {
-    pages: [
-      'pages/index/index',
-      'pages/detail/detail'
-    ],
-    window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
+  componentWillMount(){
   }
 
   componentDidMount(){
@@ -38,13 +27,28 @@ class App extends Component {
   componentDidCatchError(){
   }
 
+  config = {
+    pages: [
+      'pages/index/index',
+      'pages/detail/detail'
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
+    }
+  }
+
+
+
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
   render(){
     return (
-      <Index/>
+      <Index />
     )
   }
 }
 
-Taro.render(<App/>, document.getElementById('app'))
+Taro.render(<App />, document.getElementById('app'))

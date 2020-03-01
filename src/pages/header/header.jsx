@@ -90,7 +90,7 @@ export default class Header extends Component {
 
         <AtButton>按钮</AtButton>
 
-        <AtRadio options={options} value={'option2'}></AtRadio>
+        <AtRadio options={options} value='option2'></AtRadio>
 
         <AtCheckbox
           options={checkOptions}

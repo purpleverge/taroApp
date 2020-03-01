@@ -1,17 +1,15 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
+import { AtButton } from 'taro-ui'
+
 import Header from '../header/header'
 import Clock from "../clock/clock";
 import List from "../list/list";
-import { AtButton } from 'taro-ui'
+
 
 import './index.less'
 
 export default class Index extends Component {
-
-  config = {
-    navigationBarTitleText: '首页'
-  }
 
   state = {
     inputValue: ''
@@ -32,6 +30,10 @@ export default class Index extends Component {
   componentDidHide(){
   }
 
+  config = {
+    navigationBarTitleText: '首页'
+  }
+
   handleHeaderInput(inputValue){
     this.setState({inputValue})
   }
@@ -50,24 +52,21 @@ export default class Index extends Component {
     })
   }
 
+  handleTimeChange(value){
+    console.log({message: value.toLocaleString()})
+  }
+
   render(){
     return (
       <View>
-        <Header title='homePage' onChange={this.handleHeaderInput.bind(this)}></Header>
+        <Header title='homePage' onChange={this.handleHeaderInput.bind(this)} />
         <View className='index'>
           <Text>父组件input的内容：{this.state.inputValue}</Text>
         </View>
-        <Clock onTimeChange={
-          (value) => {
-            console.log({message: value.toLocaleString()})
-          }}>
-          <Text>我是index传入的</Text>
-        </Clock>
-        <List onItemClick={this.handleItemClick.bind(this)}></List>
+        <Clock onTimeChange={this.handleTimeChange.bind(this)} />
+        <List onItemClick={this.handleItemClick.bind(this)} />
         <AtButton onClick={this.handleToDetail}>跳转详情</AtButton>
       </View>
     )
   }
-
-
 }

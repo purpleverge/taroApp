@@ -80,15 +80,17 @@ export default class List extends Component {
               //   { item.id }--{ item.name }--{ item.age }
               // </View>
 
-              return <AtListItem title={`${item.id}--${item.name}--${item.age}`}
-                                 key={index}
-                                 arrow={"right"}
-                                 onClick={this.handleItemClick.bind(this, item)}/>
+              return <AtListItem
+                title={`${item.id}--${item.name}--${item.age}`}
+                key={index}
+                arrow='right'
+                onClick={this.handleItemClick.bind(this, item)}
+              />
             })
           }
         </AtList>
-        <AtButton onClick={this.handleAddUser.bind(this)} type={"primary"}> 添加 </AtButton>
-        <AtButton onClick={this.handleDelUser.bind(this)} type={"secondary"}> 删除 </AtButton>
+        <AtButton onClick={this.handleAddUser.bind(this)} type='primary'> 添加 </AtButton>
+        <AtButton onClick={this.handleDelUser.bind(this)} type='secondary'> 删除 </AtButton>
       </View>
     )
   }
