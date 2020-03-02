@@ -55,6 +55,7 @@ export default class List extends Component {
     // 列表渲染
     // const tempArray = ['a', 'b', 'c', 'd', 'e', 'f']
     const {users} = this.state
+
     return (
       <View>
         <AtList>

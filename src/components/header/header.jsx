@@ -44,6 +44,12 @@ export default class Header extends Component {
     this.props.onChange(value)
   }
 
+  handleToTodo(){
+    Taro.navigateTo({
+      // 注意这里url一定要有"/"
+      url: '/pages/todo/todo'
+    })
+  }
 
   // 必须有这个函数
   render(){
@@ -88,7 +94,7 @@ export default class Header extends Component {
         {/*使用变量*/}
         <Text>{title}</Text>
 
-        <AtButton>按钮</AtButton>
+        <AtButton type='secondary' onClick={this.handleToTodo}>跳转Todo页面</AtButton>
 
         <AtRadio options={options} value='option2'></AtRadio>
 

@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { Provider } from "@tarojs/redux";
 import 'taro-ui/dist/style/index.scss'
 
-import { configStore } from './store'
+import configStore from './store'
 
 import Index from './pages/index'
 
@@ -15,20 +15,21 @@ import './app.less'
 //   require('nerv-devtools')
 // }
 const store = configStore()
+
 class App extends Component {
-  componentWillMount() {
+  componentWillMount(){
   }
 
-  componentDidMount() {
+  componentDidMount(){
   }
 
-  componentDidShow() {
+  componentDidShow(){
   }
 
-  componentDidHide() {
+  componentDidHide(){
   }
 
-  componentDidCatchError() {
+  componentDidCatchError(){
   }
 
   config = {
@@ -48,7 +49,7 @@ class App extends Component {
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render() {
+  render(){
     return (
       <Provider store={store}>
         <Index />
