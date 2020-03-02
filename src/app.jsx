@@ -1,7 +1,11 @@
 import Taro, { Component } from '@tarojs/taro'
+import { Provider } from "@tarojs/redux";
 import 'taro-ui/dist/style/index.scss'
 
+import { configStore } from './store'
+
 import Index from './pages/index'
+
 import './app.less'
 
 
@@ -10,27 +14,29 @@ import './app.less'
 // if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
 //   require('nerv-devtools')
 // }
-
+const store = configStore()
 class App extends Component {
-  componentWillMount(){
+  componentWillMount() {
   }
 
-  componentDidMount(){
+  componentDidMount() {
   }
 
-  componentDidShow(){
+  componentDidShow() {
   }
 
-  componentDidHide(){
+  componentDidHide() {
   }
 
-  componentDidCatchError(){
+  componentDidCatchError() {
   }
 
   config = {
     pages: [
       'pages/index/index',
-      'pages/detail/detail'
+      'pages/detail/detail',
+      'pages/todo/todo',
+
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -40,13 +46,13 @@ class App extends Component {
     }
   }
 
-
-
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render(){
+  render() {
     return (
-      <Index />
+      <Provider store={store}>
+        <Index />
+      </Provider>
     )
   }
 }
