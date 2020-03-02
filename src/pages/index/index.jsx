@@ -2,9 +2,9 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
 
-import Header from '../header/header'
-import Clock from "../clock/clock";
-import List from "../list/list";
+import Header from '../../components/header/header'
+import Clock from "../../components/clock/clock";
+import List from "../../components/list/list";
 
 
 import './index.less'

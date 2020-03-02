@@ -63,7 +63,7 @@ const config = {
   },
   h5: {
     publicPath: '/',
-    devServer:{port:80, host:'localhost'},
+    devServer:{port:8080, host:'localhost'},
     staticDirectory: 'static',
     module: {
       postcss: {
